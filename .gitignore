@@ -1,0 +1,18 @@
+# Design source files and temporary exports
+*.ai
+*.tmp
+Image.png
+მაგნიტი.png
+
+# Unused/duplicate exported assets
+Magniti/1x/
+Magniti/SVG/SVG/
+Magniti/SVG/Number Asset 3.svg
+Magniti/SVG/Number Asset 5.svg
+Magniti/SVG/New folder/*
+!Magniti/SVG/New folder/FiraGO-Book.otf
+
+# Local tooling
+.vercel/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 929 133">
+  <defs>
+    <style>
+      .cls-1 {
+        filter: url(#drop-shadow-1);
+      }
+
+      .cls-2 {
+        fill: #de2127;
+      }
+    </style>
+    <filter id="drop-shadow-1" x="0" y="0" width="929" height="133" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="3.26"/>
+      <feGaussianBlur result="blur" stdDeviation="5.44"/>
+      <feFlood flood-color="#000" flood-opacity=".2"/>
+      <feComposite in2="blur" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Layer_3" data-name="Layer 3">
+    <g class="cls-1">
+      <rect class="cls-2" x="16.52" y="13.35" width="894.9" height="99.36" rx="25.45" ry="25.45"/>
+    </g>
+  </g>
+</svg>
