@@ -36,3 +36,17 @@ deploy the multi-brand application, verify all routes, and then run
 
 `SUPABASE_SECRET_KEY` must only exist in Vercel's encrypted environment-variable
 store. Never put it in browser code, source control, chat, email, or screenshots.
+
+## Weekly email report
+
+Vercel Cron calls `/api/export-consents` every Monday at 05:00 UTC (09:00 in
+Tbilisi). The function emails a complete UTF-8 CSV snapshot that opens directly
+in Excel. It paginates Supabase results and includes the phone, brand, consent
+version, and Tbilisi timestamp.
+
+Required production environment variables:
+
+- `CRON_SECRET`
+- `RESEND_API_KEY`
+- `REPORT_TO_EMAIL`
+- `REPORT_FROM_EMAIL` (optional; defaults to Resend's test sender)

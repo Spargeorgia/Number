@@ -6,5 +6,11 @@
     { "source": "/kalata", "destination": "/kalata/index.html" },
     { "source": "/spar", "destination": "/spar/index.html" },
     { "source": "/daily", "destination": "/daily/index.html" }
+  ],
+  "crons": [
+    {
+      "path": "/api/export-consents",
+      "schedule": "0 5 * * 1"
+    }
   ]
 }
