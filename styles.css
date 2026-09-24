@@ -102,6 +102,15 @@ input {
   width: 100%;
 }
 
+.website-field {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
 .phone-field {
   width: 100%;
   height: clamp(44px, 11.7vw, 50px);
@@ -171,6 +180,12 @@ input::placeholder {
 
 .submit-button:active {
   transform: translateY(1px);
+}
+
+.submit-button:disabled {
+  opacity: 0.72;
+  cursor: wait;
+  transform: none;
 }
 
 .consent-copy {
