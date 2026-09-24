@@ -1,0 +1,11 @@
+# Source design files are not part of the website bundle.
+*.ai
+*.tmp
+Image.png
+მაგნიტი.png
+
+# Duplicate and unused exports.
+Magniti/1x/
+Magniti/SVG/SVG/
+Magniti/SVG/Number Asset 3.svg
+Magniti/SVG/Number Asset 5.svg
