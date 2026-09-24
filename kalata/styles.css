@@ -7,6 +7,14 @@
 }
 
 @font-face {
+  font-family: "FiraGO SemiBold";
+  src: url("/Magniti/SVG/New%20folder/FiraGO-SemiBold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
   font-family: "Archi";
   src: url("/archi_mt_test3-Bold.otf") format("opentype");
   font-style: normal;
@@ -192,9 +200,9 @@ input::placeholder {
 
 .consent-copy h2 {
   margin: 0 0 clamp(10px, 2.8vw, 12px);
-  font-family: "Archi", "FiraGO", sans-serif;
+  font-family: "FiraGO SemiBold", "FiraGO", sans-serif;
   font-size: clamp(9.2px, 2.65vw, 11.2px);
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.35;
   white-space: nowrap;
 }
@@ -270,7 +278,7 @@ input::placeholder {
   }
 
   .consent-copy h2 {
-    font-size: 8.7px;
+    font-size: clamp(7.6px, 2.72vw, 8.7px);
   }
 
   .consent-copy p {
