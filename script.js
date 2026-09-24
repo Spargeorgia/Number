@@ -5,6 +5,7 @@ const successState = document.querySelector("#success-state");
 const resetButton = document.querySelector("#reset-form");
 const submitButton = form.querySelector(".submit-button");
 const websiteInput = document.querySelector("#website");
+const brand = document.body.dataset.brand?.trim().toLowerCase() || "magniti";
 
 phoneInput.addEventListener("input", (event) => {
   const digits = event.target.value.replace(/\D/g, "").replace(/^995/, "").slice(0, 9);
@@ -35,6 +36,7 @@ form.addEventListener("submit", async (event) => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         phone: `+995${phone}`,
+        brand,
         website: websiteInput.value,
       }),
     });

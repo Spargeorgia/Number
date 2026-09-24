@@ -2,11 +2,18 @@
 create table if not exists public.consents (
   id bigint generated always as identity primary key,
   phone text not null,
-  consent_version text not null default 'magniti-sms-v1',
+  brand text not null,
+  consent_version text not null,
   created_at timestamptz not null default now(),
   constraint consents_phone_format check (phone ~ '^\+9955[0-9]{8}$'),
-  constraint consents_phone_version_unique unique (phone, consent_version)
+  constraint consents_brand_allowed
+    check (brand in ('magniti', 'kalata', 'spar', 'daily')),
+  constraint consents_phone_brand_version_unique
+    unique (phone, brand, consent_version)
 );
+
+create index if not exists consents_brand_created_at_idx
+  on public.consents (brand, created_at desc);
 
 alter table public.consents enable row level security;
 

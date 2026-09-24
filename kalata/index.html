@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ka">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#e65125" />
+    <title>კალათა | SMS თანხმობა</title>
+    <link rel="stylesheet" href="/kalata/styles.css" />
+  </head>
+  <body data-brand="kalata">
+    <main class="page-shell">
+      <h1 class="sr-only">კალათა — SMS შეტყობინებების თანხმობა</h1>
+
+      <header class="brand-header">
+        <a class="brand" href="/kalata" aria-label="კალათა, მთავარი გვერდი">
+          <img src="/Kalata%20assets/Logo.svg" alt="კალათა" />
+        </a>
+      </header>
+
+      <section class="signup-panel" aria-labelledby="signup-title">
+        <div class="form-wrap">
+          <form id="signup-form" novalidate>
+            <label class="website-field" aria-hidden="true">
+              Website
+              <input id="website" name="website" type="text" tabindex="-1" autocomplete="off" />
+            </label>
+
+            <label class="sr-only" for="phone">მობილურის ნომერი</label>
+            <div class="phone-field">
+              <input
+                id="phone"
+                name="phone"
+                type="tel"
+                inputmode="numeric"
+                autocomplete="tel"
+                placeholder="+995 XXX XXX XXX"
+                maxlength="16"
+                aria-describedby="phone-error"
+                required
+              />
+            </div>
+            <p class="field-error" id="phone-error" role="alert"></p>
+
+            <button class="submit-button" type="submit">თანხმობა</button>
+
+            <div class="consent-copy">
+              <h2 id="signup-title"><span aria-hidden="true">*</span>თანხმობა პერსონალური მონაცემების დამუშავებაზე</h2>
+              <p>“ტელეფონის ნომრის შეყვანითა და მოცემული ველის მონიშვნით ვაცხადებ თანხმობას, რომ შპს „რითეილ ჯგუფმა“ (ს/კ 436041659), პირდაპირი მარკეტინგის მიზნით დაამუშაოს ჩემი ტელეფონის ნომერი და თავად ან/და მისი დავალებით მოქმედი SMS მომსახურების მიმწოდებლის მეშვეობით გამომიგზავნოს სარეკლამო ან/და საინფორმაციო SMS შეტყობინებები კომპანიის, მისი ბრენდების (SPAR, Magniti, Daily და Kalata) ან/და პარტნიორი კომპანიების შესახებ, რომლებიც ოპერირებენ სავაჭრო ნიშნით “SPAR”. ინფორმირებული ვარ, რომ შემიძლია ნებისმიერ დროს, უფასოდ და ყოველგვარი მიზეზის მითითების გარეშე, გამოვიხმო აღნიშნული თანხმობა და უარი ვთქვა SMS შეტყობინებების მიღებაზე, SMS-ში მითითებული უარის თქმის მექანიზმის გამოყენებით”.</p>
+            </div>
+          </form>
+
+          <div class="success-state" id="success-state" hidden>
+            <div class="success-icon" aria-hidden="true">✓</div>
+            <h2>მადლობა!</h2>
+            <p>შენი ნომერი წარმატებით დაემატა. კარგი ამბები მალე შენამდე მოვა.</p>
+            <button type="button" class="reset-button" id="reset-form">სხვა ნომრის დამატება</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="/script.js"></script>
+  </body>
+</html>

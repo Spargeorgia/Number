@@ -2,6 +2,17 @@
 
 Mobile-first Magniti SMS consent page, matched to the supplied 393 × 852 reference.
 
+## Brand pages
+
+- `/` or `/magniti` — Magniti (`magniti-sms-v1`)
+- `/kalata` — Kalata (`kalata-sms-v1`)
+- `/spar` — SPAR (`spar-sms-v1`)
+- `/daily` — Daily (`daily-sms-v1`)
+
+All pages use the same server endpoint and Supabase table. The server derives the
+consent version from an allowlisted brand; the browser cannot choose an arbitrary
+version.
+
 ## Local preview
 
 ```bash
@@ -17,6 +28,11 @@ Then open `http://localhost:8000`.
    - `SUPABASE_URL`
    - `SUPABASE_SECRET_KEY`
 3. Redeploy the production deployment after adding the variables.
+
+For an existing Magniti-only database, run
+[`002_add_brands_phase1.sql`](supabase/migrations/002_add_brands_phase1.sql),
+deploy the multi-brand application, verify all routes, and then run
+[`003_finalize_brands.sql`](supabase/migrations/003_finalize_brands.sql).
 
 `SUPABASE_SECRET_KEY` must only exist in Vercel's encrypted environment-variable
 store. Never put it in browser code, source control, chat, email, or screenshots.

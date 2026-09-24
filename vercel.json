@@ -1,0 +1,10 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/magniti", "destination": "/index.html" },
+    { "source": "/kalata", "destination": "/kalata/index.html" },
+    { "source": "/spar", "destination": "/spar/index.html" },
+    { "source": "/daily", "destination": "/daily/index.html" }
+  ]
+}

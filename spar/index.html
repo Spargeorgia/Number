@@ -3,49 +3,71 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#e21e2a" />
-    <title>მაგნიტი | SMS თანხმობა</title>
-    <link rel="stylesheet" href="styles.css" />
+    <meta name="theme-color" content="#ef3e42" />
+    <title>SPAR | SMS თანხმობა</title>
+    <link rel="stylesheet" href="/spar/styles.css" />
   </head>
-  <body data-brand="magniti">
+  <body data-brand="spar">
     <main class="page-shell">
-      <section class="hero" aria-label="მაგნიტი">
-        <div class="hero-crop" aria-hidden="true">
-          <img class="hero-image" src="Magniti/SVG/Asset 1.png" alt="" />
-        </div>
-        <a class="brand" href="/" aria-label="მაგნიტი, მთავარი გვერდი">
-          <img src="Magniti/SVG/logo.svg" alt="მაგნიტი" />
-        </a>
-      </section>
+      <header class="hero" aria-label="SPAR">
+        <img
+          class="hero-reference"
+          src="/Spar%20-%20assets/spar%20web.png"
+          alt=""
+          aria-hidden="true"
+        />
+        <h1 class="visually-hidden">SPAR</h1>
+      </header>
 
       <section class="signup-panel" aria-labelledby="signup-title">
         <div class="form-wrap">
           <form id="signup-form" novalidate>
             <label class="website-field" aria-hidden="true">
               Website
-              <input id="website" name="website" type="text" tabindex="-1" autocomplete="off" />
+              <input
+                id="website"
+                name="website"
+                type="text"
+                tabindex="-1"
+                autocomplete="off"
+              />
             </label>
+
+            <label class="visually-hidden" for="phone">მობილური ტელეფონის ნომერი</label>
             <div class="phone-field">
-              <input id="phone" name="phone" type="tel" inputmode="numeric" autocomplete="tel" placeholder="+995 XXX XXX XXX" maxlength="16" aria-describedby="phone-error" required />
+              <input
+                id="phone"
+                name="phone"
+                type="tel"
+                inputmode="numeric"
+                autocomplete="tel"
+                placeholder="+995"
+                maxlength="16"
+                aria-describedby="phone-error"
+                required
+              />
             </div>
             <p class="field-error" id="phone-error" role="alert"></p>
+
             <button class="submit-button" type="submit">თანხმობა</button>
+
             <div class="consent-copy">
-              <h2 id="signup-title"><span aria-hidden="true">*</span> თანხმობა პერსონალური მონაცემების დამუშავებაზე</h2>
+              <h2 id="signup-title"><span aria-hidden="true">*</span>თანხმობა პერსონალური მონაცემების დამუშავებაზე</h2>
               <p>“ტელეფონის ნომრის შეყვანითა და მოცემული ველის მონიშვნით ვაცხადებ თანხმობას, რომ შპს „რითეილ ჯგუფმა“ (ს/კ 436041659), პირდაპირი მარკეტინგის მიზნით დაამუშაოს ჩემი ტელეფონის ნომერი და თავად ან/და მისი დავალებით მოქმედი SMS მომსახურების მიმწოდებლის მეშვეობით გამომიგზავნოს სარეკლამო ან/და საინფორმაციო SMS შეტყობინებები კომპანიის, მისი ბრენდების (SPAR, Magniti, Daily და Kalata) ან/და პარტნიორი კომპანიების შესახებ, რომლებიც ოპერირებენ სავაჭრო ნიშნით “SPAR”.</p>
               <p>ინფორმირებული ვარ, რომ შემიძლია ნებისმიერ დროს, უფასოდ და ყოველგვარი მიზეზის მითითების გარეშე, გამოვიხმო აღნიშნული თანხმობა და უარი ვთქვა SMS შეტყობინებების მიღებაზე, SMS-ში მითითებული უარის თქმის მექანიზმის გამოყენებით”.</p>
             </div>
           </form>
+
           <div class="success-state" id="success-state" hidden>
-            <div class="success-icon">✓</div>
+            <div class="success-icon" aria-hidden="true">✓</div>
             <h2>მადლობა!</h2>
-            <p>შენი ნომერი წარმატებით დაემატა. კარგი ამბები მალე შენამდე მოვა.</p>
+            <p>შენი ნომერი წარმატებით დაემატა. SPAR-ის კარგი ამბები მალე შენამდე მოვა.</p>
             <button type="button" class="reset-button" id="reset-form">სხვა ნომრის დამატება</button>
           </div>
         </div>
       </section>
-      <footer id="terms">© 2026 მაგნიტი · შენი ყოველდღიური არჩევანი</footer>
     </main>
-    <script src="script.js"></script>
+
+    <script src="/script.js"></script>
   </body>
 </html>

@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ka">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0f6735" />
+    <meta name="description" content="Daily-ის SMS შეთავაზებების მიღებაზე თანხმობა." />
+    <title>Daily | SMS თანხმობა</title>
+    <link rel="stylesheet" href="/daily/styles.css" />
+  </head>
+  <body data-brand="daily">
+    <main class="page-shell">
+      <header class="hero" aria-label="Daily Convenience Store">
+        <h1 class="sr-only">Daily Convenience Store</h1>
+      </header>
+
+      <section class="signup-panel" aria-labelledby="signup-title">
+        <div class="form-wrap">
+          <form id="signup-form" novalidate>
+            <label class="website-field" aria-hidden="true">
+              Website
+              <input id="website" name="website" type="text" tabindex="-1" autocomplete="off" />
+            </label>
+
+            <label class="sr-only" for="phone">მობილური ტელეფონის ნომერი</label>
+            <div class="phone-field">
+              <input
+                id="phone"
+                name="phone"
+                type="tel"
+                inputmode="numeric"
+                autocomplete="tel"
+                placeholder="+995"
+                maxlength="16"
+                aria-describedby="phone-error"
+                required
+              />
+            </div>
+            <p class="field-error" id="phone-error" role="alert"></p>
+
+            <button class="submit-button" type="submit">თანხმობა</button>
+
+            <div class="consent-copy" aria-labelledby="signup-title">
+              <img
+                class="consent-art"
+                src="/Daily assets/SVG/Asset 5.svg"
+                alt=""
+                aria-hidden="true"
+              />
+              <div class="sr-only">
+                <h2 id="signup-title">თანხმობა პერსონალური მონაცემების დამუშავებაზე</h2>
+                <p>
+                  ტელეფონის ნომრის შეყვანითა და მოცემული ველის მონიშვნით ვაცხადებ თანხმობას,
+                  რომ შპს „რითეილ ჯგუფმა“ (ს/კ 436041659), პირდაპირი მარკეტინგის მიზნით
+                  დაამუშაოს ჩემი ტელეფონის ნომერი და თავად ან/და მისი დავალებით მოქმედი SMS
+                  მომსახურების მიმწოდებლის მეშვეობით გამომიგზავნოს სარეკლამო ან/და
+                  საინფორმაციო SMS შეტყობინებები კომპანიის, მისი ბრენდის Daily ან/და
+                  პარტნიორი კომპანიების შესახებ, რომლებიც ოპერირებენ სავაჭრო ნიშნით “SPAR”.
+                  ინფორმირებული ვარ, რომ შემიძლია ნებისმიერ დროს, უფასოდ და ყოველგვარი
+                  მიზეზის მითითების გარეშე, გამოვიხმო აღნიშნული თანხმობა და უარი ვთქვა SMS
+                  შეტყობინებების მიღებაზე, SMS-ში მითითებული უარის თქმის მექანიზმის გამოყენებით.
+                </p>
+              </div>
+            </div>
+          </form>
+
+          <div class="success-state" id="success-state" hidden>
+            <div class="success-icon" aria-hidden="true">✓</div>
+            <h2>მადლობა!</h2>
+            <p>შენი ნომერი წარმატებით დაემატა. კარგი ამბები მალე შენამდე მოვა.</p>
+            <button type="button" class="reset-button" id="reset-form">სხვა ნომრის დამატება</button>
+          </div>
+        </div>
+      </section>
+
+      <div class="footer-art" aria-hidden="true"></div>
+    </main>
+
+    <script src="/script.js"></script>
+  </body>
+</html>

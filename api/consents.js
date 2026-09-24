@@ -2,7 +2,12 @@ const { createHash } = require("node:crypto");
 
 const RATE_LIMIT_WINDOW_MS = 60_000;
 const RATE_LIMIT_MAX_REQUESTS = 5;
-const CONSENT_VERSION = "magniti-sms-v1";
+const CONSENT_VERSIONS = Object.freeze({
+  magniti: "magniti-sms-v1",
+  kalata: "kalata-sms-v1",
+  spar: "spar-sms-v1",
+  daily: "daily-sms-v1",
+});
 
 // Best-effort protection for warm function instances. The unique database
 // constraint is the durable protection against repeated submissions.
@@ -182,6 +187,19 @@ module.exports = async function handler(req, res) {
     return sendJson(res, 400, { ok: false, error: "invalid_phone" });
   }
 
+  // Defaulting to Magniti keeps already-open copies of the original page
+  // compatible during the multi-brand rollout. Every current page sends an
+  // explicit, server-allowlisted brand value.
+  const brand =
+    typeof body.brand === "string" && body.brand.trim()
+      ? body.brand.trim().toLowerCase()
+      : "magniti";
+  const consentVersion = CONSENT_VERSIONS[brand];
+
+  if (!consentVersion) {
+    return sendJson(res, 400, { ok: false, error: "invalid_brand" });
+  }
+
   const supabaseUrl = String(process.env.SUPABASE_URL || "").replace(/\/$/, "");
   const supabaseSecretKey = process.env.SUPABASE_SECRET_KEY;
 
@@ -206,7 +224,7 @@ module.exports = async function handler(req, res) {
 
   try {
     const response = await fetch(
-      `${parsedSupabaseUrl.origin}/rest/v1/consents?on_conflict=phone%2Cconsent_version`,
+      `${parsedSupabaseUrl.origin}/rest/v1/consents?on_conflict=phone%2Cbrand%2Cconsent_version`,
       {
         method: "POST",
         headers: {
@@ -217,7 +235,8 @@ module.exports = async function handler(req, res) {
         },
         body: JSON.stringify({
           phone,
-          consent_version: CONSENT_VERSION,
+          brand,
+          consent_version: consentVersion,
         }),
         signal: controller.signal,
       },
