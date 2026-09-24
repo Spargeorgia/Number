@@ -26,7 +26,7 @@
 
 html {
   min-width: 280px;
-  background: #ededed;
+  background: #fff;
 }
 
 body {
@@ -34,7 +34,7 @@ body {
   min-height: 100vh;
   margin: 0;
   color: var(--ink);
-  background: #ededed;
+  background: #fff;
   font-family: "FiraGO Book", "FiraGO", sans-serif;
 }
 
@@ -45,19 +45,17 @@ input {
 
 .page-shell {
   position: relative;
-  width: min(100%, 393px);
-  min-height: 100vh;
+  width: min(100%, 480px);
   margin: 0 auto;
   overflow: hidden;
   background: #fff;
-  box-shadow: 0 0 24px rgba(0, 0, 0, 0.05);
 }
 
 .hero {
   position: relative;
   z-index: 1;
   width: 100%;
-  aspect-ratio: 1179 / 439;
+  height: clamp(165px, 45.8vw, 205px);
 }
 
 .hero-crop {
@@ -68,10 +66,10 @@ input {
 
 .hero-image {
   position: absolute;
-  top: -14.64%;
-  left: -0.549%;
+  top: -22%;
+  left: -7.5%;
   display: block;
-  width: 101.306%;
+  width: 115%;
   max-width: none;
   height: auto;
 }
@@ -79,10 +77,10 @@ input {
 .brand {
   position: absolute;
   z-index: 2;
-  top: 79.46%;
-  left: 10.613%;
+  top: 72%;
+  left: 7%;
   display: block;
-  width: 40.432%;
+  width: 47%;
 }
 
 .brand img {
@@ -94,148 +92,120 @@ input {
 .signup-panel {
   position: relative;
   width: 100%;
-  aspect-ratio: 1179 / 2117;
+  padding: clamp(76px, 20vw, 96px) clamp(20px, 6.2vw, 30px) clamp(28px, 7vw, 38px);
   background: #fff;
 }
 
 .form-wrap,
 #signup-form {
-  position: absolute;
-  inset: 0;
+  position: relative;
+  width: 100%;
 }
 
 .phone-field {
-  position: absolute;
-  top: 8.401%;
-  left: 50%;
-  width: 75.903%;
-  height: 4.693%;
-  transform: translateX(-50%);
+  width: 100%;
+  height: clamp(44px, 11.7vw, 50px);
   overflow: hidden;
-  border: 1px solid #cccccc;
-  border-radius: 2.843% / 25.6%;
+  border: 1px solid #ccc;
+  border-radius: 12px;
   background: #e7e7e7;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.22);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .phone-field:focus-within {
   border-color: #a9a9a9;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.22), 0 0 0 1px rgba(222, 33, 39, 0.14);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2), 0 0 0 2px rgba(222, 33, 39, 0.13);
 }
 
 input[type="tel"] {
   width: 100%;
   height: 100%;
-  padding: 0 2.3%;
+  padding: 0 14px;
   border: 0;
   outline: 0;
   color: #5f6062;
   background: transparent;
   font-family: "FiraGO Book", "FiraGO", sans-serif;
-  font-size: clamp(11px, 3.297vw, 12.96px);
+  font-size: clamp(14px, 3.8vw, 17px);
   line-height: 1;
   letter-spacing: 0.01em;
 }
 
 input::placeholder {
-  color: #cfd1d3;
+  color: #c7c9cb;
   opacity: 1;
 }
 
-.submit-button {
-  position: absolute;
-  top: 13.605%;
-  left: 50%;
-  width: 78.796%;
-  height: 6.283%;
-  margin: 0;
-  padding: 0 0 0.3%;
-  transform: translateX(-50%);
-  border: 0;
-  outline: 0;
-  color: #fff;
-  background: transparent url("Magniti/SVG/button.svg") center / 100% 100% no-repeat;
-  font-family: "Archi", "FiraGO", sans-serif;
-  font-size: clamp(13px, 4.07vw, 16px);
-  font-weight: 700;
-  line-height: 1;
-  cursor: pointer;
-}
-
-.submit-button:focus-visible {
-  border-radius: 10px;
-  box-shadow: 0 0 0 2px #fff, 0 0 0 4px var(--red);
-}
-
-.submit-button:active {
-  transform: translateX(-50%) translateY(1px);
-}
-
 .field-error {
-  position: absolute;
-  top: 20.2%;
-  left: 11.96%;
-  width: 76.08%;
-  margin: 0;
+  margin: 7px 2px 0;
   color: var(--red);
-  font-size: clamp(7px, 2.04vw, 8px);
-  line-height: 1.25;
+  font-size: clamp(10px, 2.8vw, 12px);
+  line-height: 1.3;
 }
 
 .field-error:empty {
   display: none;
 }
 
-.consent-copy {
-  position: absolute;
-  top: 25.019%;
-  left: 12.326%;
-  width: 76.198%;
-  margin: 0;
-}
-
-.consent-art {
-  display: block;
+.submit-button {
   width: 100%;
-  height: auto;
-  overflow: visible;
-}
-
-.legal-heading {
-  fill: var(--ink);
-  font-family: "Archi", sans-serif;
-  font-size: 25.88px;
-  font-weight: 700;
-}
-
-.legal-body {
-  fill: var(--muted);
-  font-family: "FiraGO Book", "FiraGO", sans-serif;
-  font-size: 28px;
-  font-weight: 400;
-}
-
-.legal-star {
-  fill: var(--red);
-}
-
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
+  height: clamp(48px, 13vw, 56px);
+  margin: 12px 0 0;
+  padding: 1px 20px 0;
   border: 0;
+  border-radius: 12px;
+  outline: 0;
+  color: #fff;
+  background: var(--red);
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.2);
+  font-family: "Archi", "FiraGO", sans-serif;
+  font-size: clamp(17px, 4.7vw, 21px);
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.submit-button:focus-visible {
+  box-shadow: 0 0 0 2px #fff, 0 0 0 4px var(--red);
+}
+
+.submit-button:active {
+  transform: translateY(1px);
+}
+
+.consent-copy {
+  width: 100%;
+  margin-top: clamp(46px, 12.5vw, 60px);
+}
+
+.consent-copy h2 {
+  margin: 0 0 clamp(16px, 4.5vw, 21px);
+  font-family: "Archi", "FiraGO", sans-serif;
+  font-size: clamp(12px, 3.25vw, 14px);
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.consent-copy h2 span {
+  color: var(--red);
+}
+
+.consent-copy p {
+  margin: 0 0 clamp(22px, 6vw, 28px);
+  color: var(--muted);
+  font-size: clamp(12.5px, 3.42vw, 14.5px);
+  line-height: 1.48;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.consent-copy p:last-child {
+  margin-bottom: 0;
 }
 
 .success-state {
-  position: absolute;
-  top: 10%;
-  left: 11.96%;
-  width: 76.08%;
+  width: 100%;
+  padding: 10px 0 34px;
   color: var(--ink);
   text-align: center;
 }
@@ -247,35 +217,36 @@ input::placeholder {
 
 .success-icon {
   display: grid;
-  width: 42px;
-  height: 42px;
-  margin: 0 auto 12px;
+  width: 54px;
+  height: 54px;
+  margin: 0 auto 16px;
   place-items: center;
   border-radius: 50%;
   color: #fff;
   background: var(--red);
   font-family: sans-serif;
-  font-size: 22px;
+  font-size: 28px;
 }
 
 .success-state h2 {
-  margin: 0 0 8px;
+  margin: 0 0 10px;
   font-family: "Archi", "FiraGO", sans-serif;
-  font-size: 22px;
+  font-size: 26px;
 }
 
 .success-state p {
-  margin: 0;
+  max-width: 330px;
+  margin: 0 auto;
   color: var(--muted);
-  font-size: 12px;
-  line-height: 1.45;
+  font-size: 14px;
+  line-height: 1.5;
 }
 
 .reset-button {
-  margin-top: 18px;
-  padding: 10px 16px;
+  margin-top: 22px;
+  padding: 12px 18px;
   border: 0;
-  border-radius: 9px;
+  border-radius: 10px;
   color: #fff;
   background: var(--red);
   font-family: "Archi", "FiraGO", sans-serif;
@@ -286,13 +257,33 @@ footer {
   display: none;
 }
 
-@media (max-width: 320px) {
-  input[type="tel"] {
-    font-size: 8px;
+@media (max-width: 340px) {
+  .signup-panel {
+    padding-right: 16px;
+    padding-left: 16px;
   }
 
-  .submit-button {
-    font-size: 13px;
+  .consent-copy h2 {
+    font-size: 11.5px;
+  }
+
+  .consent-copy p {
+    font-size: 12.2px;
+  }
+}
+
+@media (min-width: 520px) {
+  html,
+  body {
+    background: #ededed;
+  }
+
+  body {
+    padding: 24px 0;
+  }
+
+  .page-shell {
+    box-shadow: 0 0 24px rgba(0, 0, 0, 0.08);
   }
 }
 
